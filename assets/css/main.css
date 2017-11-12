@@ -1551,7 +1551,7 @@
 /* Basic */
 
 	body {
-		background: #f0f4f4;
+		background: white;
 		color: #5b5b5b;
 		font-size: 15pt;
 		line-height: 1.85em;
@@ -2096,11 +2096,11 @@
 
 	#header {
 		position: relative;
-		background-image: url("../../images/header.jpg");
+		/*background-image: url("../../images/header.jpg");*/
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
-		color: #fff;
+		color: white;
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
@@ -2131,7 +2131,7 @@
 			}
 
 		#header h1 {
-			color: #fff;
+			color: black;
 			font-size: 3em;
 			line-height: 1em;
 		}
@@ -2177,7 +2177,7 @@
 
 		body.homepage #header:after {
 			content: '';
-			background: #1C0920;
+			background: white;
 			display: block;
 			position: absolute;
 			left: 0;
