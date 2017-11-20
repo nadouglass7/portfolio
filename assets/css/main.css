@@ -1753,6 +1753,25 @@
 			margin: 0 0 4em 0;
 		}
 
+			.image.main:first-child {
+				margin-top: 0;
+			}
+
+			.image.main img {
+				width: 100%;
+			}
+		@media screen and (max-width: 736px) {
+
+			.image.fit {
+				margin: 2rem 0;
+			}
+
+			.image.main {
+				margin: 2rem 0;
+			}
+
+		}
+
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;
