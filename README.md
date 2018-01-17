@@ -1,3 +1,26 @@
+Welcome to my portfolio!
+
+Check it out here: [ndcartography.com]
+
+==============
+
+## Folders
+The class writes to a MySQL database table, saving values for every page visit for the following attributes:
+
+NAME|DESCRIPTION|
+---|---|
+`assets`|stuff|
+`images`|stuff|
+`pages`|stuff|
+`about.html`|stuff |
+`cv.html`|stuff|
+`store.html`|stuff|
+`student.html`|stuff|
+`licence.txt`|stuff|
+
+
+-----
+
 Helios by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -21,8 +44,6 @@ aj@lkn.io | @ajlkn
 
 Credits:
 
-	Demo Images:
-		Michael Domaradzki (md.photomerchant.net)
 
 	Icons:
 		Font Awesome (fortawesome.github.com/Font-Awesome)
