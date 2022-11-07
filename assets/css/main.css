@@ -923,7 +923,7 @@
 	@media screen and (max-width: 960px) {
 
 		.row > * {
-			padding: 32px 0 0 32px;
+			padding: 0 0 0 0;
 		}
 
 		.row {
@@ -931,7 +931,7 @@
 		}
 
 		.row.uniform > * {
-			padding: 32px 0 0 32px;
+			padding: 0 0 0 0;
 		}
 
 		.row.uniform {
@@ -1138,7 +1138,7 @@
 	@media screen and (max-width: 840px) {
 
 		.row > * {
-			padding: 32px 0 0 32px;
+			padding: 10px 10px 0 10px;
 		}
 
 		.row {
