@@ -1,6 +1,6 @@
 Welcome to my portfolio!
 
-Check it out here: [ndcartography.com]
+Check it out here: https://nadouglass7.github.io/portfolio/
 
 ==============
 
