@@ -22,7 +22,13 @@
 			.image.featured.zoom:hover img {
 			transform: scale(1.05);
 			}
-
+			@keyframes bounce {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(8px); }
+			}
+			.bounce {
+			animation: bounce 1s infinite;
+			}
 		</style>
 	</head>
 	<body class="homepage">
@@ -39,7 +45,9 @@
 								<h3>Projects in cartography etc.</h3> 
 							</header>
 							<footer>
-								<a href="#banner" class="button circled scrolly"><h2 style="color: white; margin-top:20px; opacity: .2">⌄</h2></a>
+								<a href="#map-gallery">
+									<h1 class="bounce" style="color: rgb(221, 107, 93); margin-top:20px;">⌄</h1>
+								  </a>
 							</footer>
 						</div>
 
