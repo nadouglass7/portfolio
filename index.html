@@ -29,6 +29,17 @@
 			.bounce {
 			animation: bounce 1s infinite;
 			}
+			.fade-in-section {
+			opacity: 0;
+			transform: translateY(20px);
+			transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+			will-change: opacity, transform;
+			}
+
+			.fade-in-section.is-visible {
+			opacity: 1;
+			transform: none;
+			}
 		</style>
 	</head>
 	<body class="homepage">
@@ -115,8 +126,8 @@
 			<!-------------------->
 			<!-- RECENT WORK --->
 			<!-------------------->
-			<div class="wrapper style1">
-				<section id="map-gallery" class="container special">
+			<div class="wrapper style1 fade-in">
+				<section id="map-gallery" class="container special fade-in-section">
 				  <header style="text-align: center;">
 					<h2>Recent Work:</h2>
 				  </header>
@@ -295,4 +306,27 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		  const faders = document.querySelectorAll(".fade-in-section");
+	  
+		  const appearOnScroll = new IntersectionObserver(
+			(entries, observer) => {
+			  entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+				  entry.target.classList.add("is-visible");
+				  observer.unobserve(entry.target); // only trigger once
+				}
+			  });
+			},
+			{
+			  threshold: 0.1
+			}
+		  );
+	  
+		  faders.forEach((fader) => {
+			appearOnScroll.observe(fader);
+		  });
+		});
+	  </script>
 </html>
