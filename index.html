@@ -16,6 +16,12 @@
 		<style>
 		    h4 {margin-bottom: 70px;}
 		    img {border: 5;}
+			.image.featured.zoom img {
+			transition: transform 0.3s ease;
+			}
+			.image.featured.zoom:hover img {
+			transform: scale(1.05);
+			}
 
 		</style>
 	</head>
@@ -102,100 +108,135 @@
 			<!-- RECENT WORK --->
 			<!-------------------->
 			<div class="wrapper style1">
-					<section id="banner" class="container special">
-						<header style="text-align: center;">
-							<h2 >Recent Work: </h2>
-						</header>
-						<div class="row">
-							<!-- Green Trails Maps --->
-							<article class="4u 12u(mobile) special">
-								<a href="pages/AAG_2021.html" class="image featured"><img src="images/thumbs/AAG_2021.png" alt="" /></a>
-								<header>
-									<a href="pages/AAG_2021.html"><h3>Green Trails Maps </h3></a>
-								</header>
-							</article>
-							<!-- Eugene Tea Festival --->
-							<article class="4u 12u(mobile) special">
-								<a href="images/fulls/ETF_visitor_map_portfolio_watermarked_large.webp" class="image featured"><img src="images/thumbs/ETF_visitor_map_centered_crop_2048.png" alt="" /></a>
-								<header>
-									<a href="https://www.eugeneteafest.org/home"><h3>Eugene Tea Festival Visitor Map</h3></a>
-								</header>
-							</article>
-							<!-- Carto Perspective --->
-							<article class="4u 12u(mobile) special">
-								<a href="https://cartographicperspectives.org/index.php/journal/article/view/1727/2091" class="image featured"><img src="images/thumbs/carto-perspective_resized.png" alt="" /></a>
-								<header>
-									<a href="https://doi.org/10.14714/CP100.1727"><h3>Publication: That’s a Relief...</h3></a>
-								</header>
-							</article>
-							<!-- AAG --->
-							<article class="4u 12u(mobile) special">
-								<a href="pages/AAG_2021.html" class="image featured"><img src="images/thumbs/AAG_2021.png" alt="" /></a>
-								<header>
-									<a href="pages/AAG_2021.html"><h3>AAG 2021 </h3></a>
-								</header>
-							</article>
-							<!-- Tibet 2000-109 -->
-							<article class="4u 12u(mobile) special">
-							  <a href="images/fulls/Landscape_of_Change.jpg" class="image featured"><img src="images/thumbs/Landscape_of_Change.jpg" alt="" /></a>
-							  <header>
-							    <a href="images/fulls/Landscape_of_Change.jpg"><h3>A Landscape of Change</h3></a>
-							  </header>
-							</article>
-							<!-- Grand Canyon Dams -->
-							<article class="4u 12u(mobile) special">
-							  <a href="images/fulls/Grand_Canyon_Dam_Maps/Map_8-01.png" class="image featured"><img src="images/thumbs/Grand_Canyon_Thumbs/Map_8-01.png" alt="" /></a>
-							  <header>
-							    <a href="images/fulls/Grand_Canyon_Dam_Maps/Map_8-01.png"><h3>Grand Canyon Dams</h3></a>
-							  </header>
-							</article>
-							<!-- Sierra Snow --->
-							<article class="4u 12u(mobile) special">
-							  <a href="store.html" class="image featured"><img src="images/thumbs/Sierra_Snow.png" alt="" /></a>
-							  <header>
-							    <a href="https://www.zazzle.com/sierra_snow_cover_2017_poster-228848102447516736" target="_blank"><h3>Sierra Nevada Snow Cover 2017</h3></a>
-							  </header>
-							</article>
-							<!-- US History --->
-							<article class="4u 12u(mobile) special">
-							  <a href="images/fulls/US_History_Guide/US_History.pdf" class="image featured"><img src="images/thumbs/US_History_Guide/US_History.gif" alt="" /></a>
-							  <header>
-							    <a href="images/fulls/US_History_Guide/US_History.pdf"><h3>U.S. History Guide</h3><h5>Pamphlet</h5></a>
-							  </header>
-							</article>
-							<!-- Fed Pub --->
-							<article class="4u 12u(mobile) special">
-							  <a href="pages/pub_fed_lands.html" target="_blank" class="image featured"><img src="images/thumbs/pub_fed_lands.png" alt="" /></a>
-							  <header>
-							    <a href="pages/pub_fed_lands.html" target="_blank"><h3>Public, Private, and Tribal Lands<br></h3><h4>Humboldt and Trinity Counties</h4></a>
-							  </header>
-							</article>
-							<!-- HSU Web --->
-							<article  href="#banner" class="4u 12u(mobile) special">
-							  <a href="http://gsp.humboldt.edu/HSUMap/CampusMap.html" target="_blank" class="image featured"><img src="images/thumbs/HSU_Campus_Map.png" alt="" /></a>
-							  <header>
-							    <a href="http://gsp.humboldt.edu/HSUMap/CampusMap.html" target="_blank" ><h3>HSU Interactive Map<br></h3><h4> Web Map (Using Canvas.js)</h4></a>
-							  </header>
-							</article>
-							<!-- Humboldt AC --->
-							<article class="4u 12u(mobile) special">
-							  <a href="images/fulls/Humboldt_CA.png" class="image featured"><img src="images/thumbs/Humboldt_CA.png" alt="" /></a>
-							  <header>
-							    <a href="images/fulls/Humboldt_CA.png"><h3>Humboldt Bay<br></h3><h4> Land Cover Map</h4></a>
-							  </header>
-							</article>
-							<!-- Mapzen --->
-							<article class="4u 12u(mobile) special">
-							  <a href="https://medium.com/postzen/increasing-name-translations-in-whos-on-first-b2fb870e8711" target="_blank" class="image featured"><img src="images/thumbs/total-by-lang.png" alt="" /></a>
-							  <header>
-							    <a href="https://medium.com/postzen/increasing-name-translations-in-whos-on-first-b2fb870e8711" target="_blank"><h3>That time I interned at Mapzen <br></h3><h4>Language Translation Toponyms</h4></a>
-							  </header>
-							</article>
-
-						</div>
-					</section>
-
-				</div>
+				<section id="map-gallery" class="container special">
+				  <header style="text-align: center;">
+					<h2>Recent Work:</h2>
+				  </header>
+				  <div class="row">
+			  
+					<!-- Green Trails Maps -->
+					<article class="4u 12u(mobile) special">
+					  <a href="pages/Green_Trails.html" class="image featured zoom">
+						<img src="images/thumbs/greentrails_gallery_grid_thumb.webp" alt="" />
+					  </a>
+					  <header>
+						<a href="pages/Green_Trails.html"><h3>Green Trails Maps</h3></a>
+					  </header>
+					</article>
+			  
+					<!-- Eugene Tea Festival -->
+					<article class="4u 12u(mobile) special">
+					  <a href="images/fulls/ETF_visitor_map_portfolio_watermarked_large.webp" class="image featured zoom">
+						<img src="images/thumbs/ETF_visitor_map_centered_crop_2048.png" alt="" />
+					  </a>
+					  <header>
+						<a href="https://www.eugeneteafest.org/home"><h3>Eugene Tea Festival Visitor Map</h3></a>
+					  </header>
+					</article>
+			  
+					<!-- Carto Perspective -->
+					<article class="4u 12u(mobile) special">
+					  <a href="https://cartographicperspectives.org/index.php/journal/article/view/1727/2091" class="image featured zoom">
+						<img src="images/thumbs/carto-perspective_resized.png" alt="" />
+					  </a>
+					  <header>
+						<a href="https://doi.org/10.14714/CP100.1727"><h3>Publication: That’s a Relief...</h3></a>
+					  </header>
+					</article>
+			  
+					<!-- AAG -->
+					<article class="4u 12u(mobile) special">
+					  <a href="pages/AAG_2021.html" class="image featured zoom">
+						<img src="images/thumbs/AAG_2021.png" alt="" />
+					  </a>
+					  <header>
+						<a href="pages/AAG_2021.html"><h3>AAG 2021</h3></a>
+					  </header>
+					</article>
+			  
+					<!-- Tibet 2000-109 -->
+					<article class="4u 12u(mobile) special">
+					  <a href="images/fulls/Landscape_of_Change.jpg" class="image featured zoom">
+						<img src="images/thumbs/Landscape_of_Change.jpg" alt="" />
+					  </a>
+					  <header>
+						<a href="images/fulls/Landscape_of_Change.jpg"><h3>A Landscape of Change</h3></a>
+					  </header>
+					</article>
+			  
+					<!-- Grand Canyon Dams -->
+					<article class="4u 12u(mobile) special">
+					  <a href="images/fulls/Grand_Canyon_Dam_Maps/Map_8-01.png" class="image featured zoom">
+						<img src="images/thumbs/Grand_Canyon_Thumbs/Map_8-01.png" alt="" />
+					  </a>
+					  <header>
+						<a href="images/fulls/Grand_Canyon_Dam_Maps/Map_8-01.png"><h3>Grand Canyon Dams</h3></a>
+					  </header>
+					</article>
+			  
+					<!-- Sierra Snow -->
+					<article class="4u 12u(mobile) special">
+					  <a href="store.html" class="image featured zoom">
+						<img src="images/thumbs/Sierra_Snow.png" alt="" />
+					  </a>
+					  <header>
+						<a href="https://www.zazzle.com/sierra_snow_cover_2017_poster-228848102447516736" target="_blank"><h3>Sierra Nevada Snow Cover 2017</h3></a>
+					  </header>
+					</article>
+			  
+					<!-- US History -->
+					<article class="4u 12u(mobile) special">
+					  <a href="images/fulls/US_History_Guide/US_History.pdf" class="image featured zoom">
+						<img src="images/thumbs/US_History_Guide/US_History.gif" alt="" />
+					  </a>
+					  <header>
+						<a href="images/fulls/US_History_Guide/US_History.pdf"><h3>U.S. History Guide</h3><h5>Pamphlet</h5></a>
+					  </header>
+					</article>
+			  
+					<!-- Fed Pub -->
+					<article class="4u 12u(mobile) special">
+					  <a href="pages/pub_fed_lands.html" target="_blank" class="image featured zoom">
+						<img src="images/thumbs/pub_fed_lands.png" alt="" />
+					  </a>
+					  <header>
+						<a href="pages/pub_fed_lands.html" target="_blank"><h3>Public, Private, and Tribal Lands</h3><h4>Humboldt and Trinity Counties</h4></a>
+					  </header>
+					</article>
+			  
+					<!-- HSU Web -->
+					<article class="4u 12u(mobile) special">
+					  <a href="http://gsp.humboldt.edu/HSUMap/CampusMap.html" target="_blank" class="image featured zoom">
+						<img src="images/thumbs/HSU_Campus_Map.png" alt="" />
+					  </a>
+					  <header>
+						<a href="http://gsp.humboldt.edu/HSUMap/CampusMap.html" target="_blank"><h3>HSU Interactive Map</h3><h4>Web Map (Using Canvas.js)</h4></a>
+					  </header>
+					</article>
+			  
+					<!-- Humboldt AC -->
+					<article class="4u 12u(mobile) special">
+					  <a href="images/fulls/Humboldt_CA.png" class="image featured zoom">
+						<img src="images/thumbs/Humboldt_CA.png" alt="" />
+					  </a>
+					  <header>
+						<a href="images/fulls/Humboldt_CA.png"><h3>Humboldt Bay</h3><h4>Land Cover Map</h4></a>
+					  </header>
+					</article>
+			  
+					<!-- Mapzen -->
+					<article class="4u 12u(mobile) special">
+					  <a href="https://medium.com/postzen/increasing-name-translations-in-whos-on-first-b2fb870e8711" target="_blank" class="image featured zoom">
+						<img src="images/thumbs/total-by-lang.png" alt="" />
+					  </a>
+					  <header>
+						<a href="https://medium.com/postzen/increasing-name-translations-in-whos-on-first-b2fb870e8711" target="_blank"><h3>That time I interned at Mapzen</h3><h4>Language Translation Toponyms</h4></a>
+					  </header>
+					</article>
+			  
+				  </div>
+				</section>
+			  </div>
 
 			<!-- Footer -->
 				<div id="footer">
