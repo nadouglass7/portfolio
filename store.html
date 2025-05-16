@@ -14,6 +14,49 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
+	<!-- Lightbox2 CSS + JS -->
+	<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+	<style>
+	.map-container {
+		position: relative;
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.map-image {
+		width: 80%;
+		max-width: 10000px;
+		height: auto;
+		user-select: none;
+		-webkit-user-drag: none;
+		pointer-events: none;
+	}
+
+	.magnifier {
+		position: absolute;
+		border: 3px solid #fff;
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		box-shadow: 0 0 8px rgba(0,0,0,0.3);
+		display: none;
+		z-index: 10;
+		cursor: none;
+	}
+
+	.magnifier img {
+		position: absolute;
+
+		width: 1000%;
+		height: auto;
+		max-width: none;
+		user-select: none;
+		-webkit-user-drag: none;
+		pointer-events: none;
+	}
+	</style>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
 
@@ -85,22 +128,47 @@
 							    </article>
 							</div>
 							<p>
-                                The early months of 2017 marked the highest snow cover levels for the Sierra Nevada Range in more than a decade. The snow land cover class on 
-                                this map was created from Landsat 8 imagery collected between January 1st and March 30th. This data was used to create false-color images that 
-                                highlight areas of snow that were then extracted and used as a masking layer in photoshop. This map captures the dramatic increase in snow cover 
-                                while only attempting to portray the breathtaking beauty of the Sierra Nevada. <br>
-                                
-                                <div></div>
-                                <b>Cartographic details worth mentioning:</b> <br>
-                                I used a lightened swiss <a href="https://vimeo.com/humboldtgeography">hillshade</a> style relief (thank you <a href="http://ateliercarto.co/"> Aaron</a>), with isolated light blue shadowing on the areas of snow to give it a little more "frosty-ness". 
-                                The most difficult part of this map was making sure the snow cover had some textual dimension, instead of just appearing as a white blanket, placed 
-                                on top of some trees. For this, I added a slight gradient map in photoshop to distinguish snow covered areas at high elevations, versus those at lower 
-                                elevations. I also included additional texturing in areas where tree cover and snow cover intersected. A lot of hours, tears, love and joy went into 
-                                this map. Handle it with care and have fun exploring a landscape that's so near and dear to many of our hearts! Feel free to message me with any 
-                                questions, concerns or updates about this map: <a href='ndCartography@gmail.com'>ndCartography@gmail.com</a>
+								The early months of 2017 brought record-breaking snowfall to the Sierra Nevada—marking the highest snow cover levels in over a decade. 
+								This map’s <strong>snow land cover</strong> class was derived from Landsat 8 imagery collected between January 1 and March 30, 2017. 
+								Using false-color composites to emphasize snowpack, I extracted the snow-covered areas and used them as a masking layer in Photoshop. 
+								The final product captures both the <em>sheer extent of the snow</em> and the <em>awe-inspiring beauty</em> of the Sierra Nevada during this remarkable season.
 							</p>
+							
+							<div></div>
+							
+							<p>
+								<strong>Cartographic details worth noting:</strong><br>
+								The terrain is styled with a lightened Swiss 
+								<a href="https://vimeo.com/humboldtgeography" target="_blank">hillshade</a>—thank's to the help and guidance from  
+								<a href="https://www.cartografix.co/" target="_blank">Aaron Taveras</a>—with subtle light blue shadows that lend the snow a touch of “frostiness.” 
+								One of the biggest challenges was avoiding a flat, featureless snow blanket. To add depth and visual nuance, I used a gentle gradient map 
+								to distinguish higher elevation snowfields from those at lower altitudes. I also added fine-grained texture where <em>snow and tree cover overlap</em>, 
+								helping the snow feel like part of the landscape rather than something simply layered on top.
+							</p>
+							
+							<p>
+								This map was a labor of love—many hours, a few tears, and a lot of joy went into its creation. It was one of my first major undertakings as a cartographer so please handle it with care and take your time 
+								exploring a landscape that means so much to so many.
+							</p>
+							
+							<p>
+								To place an order, please message me directly at: 
+								<a href="mailto:ndCartography@gmail.com">ndCartography@gmail.com</a>
+							</p>	
+							<!-- Full-length map image -->
+							<!-- <div class="map-container">
+								<a href="images/fulls/Sierra_Snow.png" data-lightbox="map" data-title="Sierra Nevada Snow Cover Map, 2017">
+								  <img src="images/fulls/Sierra_Snow.png" alt="Sierra Nevada Snow Map" class="map-image">
+								</a>
+							</div>	 -->
+							<div class="map-container" id="mapContainer">
+								<img src="images/fulls/Sierra_Snow-large.jpeg" alt="Sierra Nevada Snow Map" class="map-image" id="mapImage">
+								<div class="magnifier" id="magnifier">
+								  <img src="images/fulls/Sierra_Snow-large.jpeg" alt="Zoomed map">
+								</div>
+							</div>			  
 							<footer>
-							    <a href="https://www.zazzle.com/sierra_snow_cover_2017_poster-228736070856426598" target="_blank" class="button">Purchase Here</a>
+							    <!--  <a href="https://www.zazzle.com/sierra_snow_cover_2017_poster-228736070856426598" target="_blank" class="button">Purchase Here</a> -->
 							    <br>
 							    <br>
 							    <br>
@@ -150,7 +218,39 @@
 		</div>
 
 		<!-- Scripts -->
-		    <!-- fade out -->
+		    <!-- magnifyer -->
+			<script>
+				const container = document.getElementById('mapContainer');
+				const image = document.getElementById('mapImage');
+				const magnifier = document.getElementById('magnifier');
+				const zoomedImage = magnifier.querySelector('img');
+			  
+				const scale = 1.5;        // Magnification scale
+				const xOffset = -50;     // Fine-tune X alignment here
+				const yOffset = -300;     // Fine-tune Y alignment here
+			  
+				container.addEventListener('mousemove', function(e) {
+				  magnifier.style.display = 'block';
+			  
+				  const rect = image.getBoundingClientRect();
+				  const x = e.clientX - rect.left;
+				  const y = e.clientY - rect.top;
+			  
+				  const magnifierX = x - magnifier.offsetWidth / 2;
+				  const magnifierY = y - magnifier.offsetHeight / 2;
+			  
+				  magnifier.style.left = `${magnifierX}px`;
+				  magnifier.style.top = `${magnifierY}px`;
+			  
+				  zoomedImage.style.left = `-${x * scale - xOffset}px`;
+				  zoomedImage.style.top = `-${y * scale - yOffset}px`;
+				});
+			  
+				container.addEventListener('mouseleave', function() {
+				  magnifier.style.display = 'none';
+				});
+			  </script>
+			<!-- fade out -->
 		    <script>document.body.className += ' fade-out';</script>
 
 			<script src="assets/js/jquery.min.js"></script>
